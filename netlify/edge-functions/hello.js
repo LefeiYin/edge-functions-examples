@@ -1,5 +1,5 @@
 export default {
-  async fetch(request) {
+  async (request)=> {
 
     let pkg = {
       'apikey':'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',
@@ -18,6 +18,6 @@ export default {
       body:JSON.stringify(pkg.data)
     }
 
-    return fetch('https://api.openai.com/v1/chat/completions', config);
+    let result = await fetch('https://api.openai.com/v1/chat/completions', config);
   },
 };
